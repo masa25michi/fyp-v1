@@ -8,4 +8,11 @@
 <p>Peer assessment provides a faster and more efficient way for an assessment process in order to boost learning outcomes. </p>
 
 <hr>
-<button>Log in</button>
+
+<?php echo Form::open(array('action' => 'main/login', 'method' => 'POST')); ?>
+    <?php echo Form::input('login','Log In',array('type'=>'submit')); ?>
+<?php echo Form::close(); ?>
+
+<?php echo Form::open(array('action' => 'main/register', 'method' => 'POST')); ?>
+    <?php echo Form::input('register','Register',array('type'=>'submit')); ?>
+<?php echo Form::close(); ?>

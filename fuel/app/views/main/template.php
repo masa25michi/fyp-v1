@@ -1,8 +1,3 @@
-<?php
-date_default_timezone_set('Asia/Hong_Kong');
-//session_start();
-?>
-
 <!DOCTYPE HTML>
 <html>
 <head>
