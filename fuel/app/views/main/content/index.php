@@ -9,10 +9,10 @@
 
 <hr>
 
-<?php echo Form::open(array('action' => 'main/login', 'method' => 'POST')); ?>
+<?php echo Form::open(array('action' => 'student/index', 'method'=>'get')); ?>
     <?php echo Form::input('login','Log In',array('type'=>'submit')); ?>
 <?php echo Form::close(); ?>
 
-<?php echo Form::open(array('action' => 'main/register', 'method' => 'POST')); ?>
+<?php echo Form::open(array('action' => 'main/register', 'method'=>'get')); ?>
     <?php echo Form::input('register','Register',array('type'=>'submit')); ?>
 <?php echo Form::close(); ?>

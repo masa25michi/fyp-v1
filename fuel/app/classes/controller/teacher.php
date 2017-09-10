@@ -1,6 +1,5 @@
 <?php
 
-
 class Controller_Teacher extends Controller_Template {
     public function before() {
         
@@ -9,6 +8,5 @@ class Controller_Teacher extends Controller_Template {
     public function action_index() {
         echo "this is teacher page";
     }
-    
     
 }

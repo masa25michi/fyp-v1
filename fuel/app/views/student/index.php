@@ -1,7 +1,7 @@
 
 
 <div class="container">
-    <h1>Register</h1>
+    <h1>Log In</h1>
     <div class="row">
 
         <?php echo Form::open(array('class' => 'form-horizontal', 'method' => 'post'));?>
@@ -18,19 +18,11 @@
         </div>
 
         <div class="form-group">
-            <label for="form_name" class="col-sm-4 control-label">Email</label>
-            <div class="col-sm-8">
-                <?php echo Form::input('email');?>
-            </div>
-        </div>
-
-        <div class="form-group">
             <label for="form_name" class="col-sm-4 control-label">Password</label>
             <div class="col-sm-8">
                 <?php echo Form::password('password');?>
             </div>
         </div>
-
         <br>
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-8">
