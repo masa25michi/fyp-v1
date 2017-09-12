@@ -5,6 +5,8 @@ class Controller_Main extends Controller_Template {
     public function before() {
         $data['title'] = Constant::WEB_NAME;
         $this->template  = View::forge('main/template', $data);
+        $this->template->header = View::forge('header');
+        $this->template->footer = View::forge('footer');
     }
     
     // First Welcome Page
@@ -25,7 +27,7 @@ class Controller_Main extends Controller_Template {
 
                     // そして、前のページか、前のページがない場合は
                     // アプリケーションのダッシュボードを表示
-                    Response::redirect('student/success');
+                    Response::redirect('student/index');
                 }
                 else
                 {
