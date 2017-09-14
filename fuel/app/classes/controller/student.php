@@ -3,6 +3,11 @@
 class Controller_Student extends Controller_Template {
 
     public function before() {
+        $auth = Auth::instance();
+        if (!$auth->check()) {
+            Response::redirect('main/login');
+        }
+
         $data['title'] = Constant::WEB_NAME;
         $this->template  = View::forge('main/template', $data);
         $this->template->header = View::forge('header');
@@ -11,23 +16,8 @@ class Controller_Student extends Controller_Template {
     }
     
     public function action_index() {
-        $auth = Auth::instance();
-        $error = null;
-
-        if (Input::method() == 'POST') {
-
-            if ($auth->login(Input::param('username'), Input::param('password'))) {
-                Response::redirect('student/dashboard');
-            } else {
-                $error = "Failed to log in";
-            }
-        }
-
-        $view = View::forge('student/index');
-        $view->set('error', $error);
-
-        $this->template->content = $view;
-
+        $this->template->header = View::forge('logout_header');
+        $this->template->content = View::forge('student/dashboard');
     }
     
     public function action_dashboard() {

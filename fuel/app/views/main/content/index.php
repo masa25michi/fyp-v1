@@ -9,7 +9,7 @@
 
 <hr>
 
-<?php echo Form::open(array('action' => 'student/index', 'method'=>'get')); ?>
+<?php echo Form::open(array('action' => 'main/login', 'method'=>'get')); ?>
     <?php echo Form::input('login','Log In',array('type'=>'submit')); ?>
 <?php echo Form::close(); ?>
 

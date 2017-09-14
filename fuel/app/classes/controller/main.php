@@ -64,6 +64,42 @@ class Controller_Main extends Controller_Template {
     }
     
     public function action_error() {
-        echo "Not found page";
+        $this->template->content = View::forge('main/content/error');
+    }
+
+    public function action_login() {
+        $auth = Auth::instance();
+        $error = null;
+
+        $auth->check() and Response::redirect('student/index');
+
+        if (Input::method() == 'POST') {
+
+            if ($auth->login(Input::param('username'), Input::param('password'))) {
+                $auth->remember_me();
+                Response::redirect('student/dashboard');
+            } else {
+                $error = "Failed to log in";
+            }
+        }
+
+        $view = View::forge('student/index');
+        $view->set('error', $error);
+
+        $this->template->content = $view;
+    }
+
+    public function action_logout() {
+        $auth = Auth::instance();
+        if ( ! $auth->check())
+        {
+            Response::redirect('main/login');
+        }
+
+        if ($auth->logout()) {
+            Response::redirect('main/index');
+        } else {
+            Response::redirect('main/error');
+        }
     }
 }

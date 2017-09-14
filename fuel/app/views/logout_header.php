@@ -16,7 +16,12 @@
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+                <li>
+                    <a href="<?php echo Uri::create('main/logout');?>">
+                        <span class="glyphicon glyphicon-log-in"></span>
+                        Log out
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
